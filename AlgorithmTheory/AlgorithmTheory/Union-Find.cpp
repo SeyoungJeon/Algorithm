@@ -16,8 +16,8 @@ int GetParent(int num) {
 
 // 각 집합들을 하나의 집합으로 합치기
 void Union(int a, int b) {
-	int aParent = GetParent(a);
-	int bParent = GetParent(b);
+	a = GetParent(a);
+	b = GetParent(b);
 	
 	// 더 작은 숫자로 집합 설정하기
 	if (a < b) {			
@@ -29,10 +29,10 @@ void Union(int a, int b) {
 }
 
 bool Find(int a, int b) {
-	int aParent = GetParent(a);
-	int bParent = GetParent(b);
+	a = GetParent(a);
+	b = GetParent(b);
 	// a와 b의 부모가 같다면 같은 집합
-	if (aParent == bParent) {	
+	if (a == b) {	
 		return true;
 	}
 	// a와 b의 부모가 다르다면 다른 집합
